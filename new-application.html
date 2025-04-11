@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Application - ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            <nav class="hidden md:flex items-center">
+                <ul class="flex space-x-6 mr-6">
+                    <li><a href="dashboard.html" class="hover:text-gray-200 transition-colors">Dashboard</a></li>
+                    <li><a href="applications.html" class="hover:text-gray-200 transition-colors font-bold">Applications</a></li>
+                    <li><a href="documents.html" class="hover:text-gray-200 transition-colors">Documents</a></li>
+                    <li><a href="payments.html" class="hover:text-gray-200 transition-colors">Payments</a></li>
+                    <li><a href="resources.html" class="hover:text-gray-200 transition-colors">Resources</a></li>
+                </ul>
+                <div class="flex items-center">
+                    <div class="mr-4 relative">
+                        <button class="focus:outline-none">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-yellow-400 text-xs text-gray-900 rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="dashboard.html" class="block px-3 py-2 hover:bg-red-700 rounded">Dashboard</a></li>
+                <li><a href="applications.html" class="block px-3 py-2 bg-red-700 rounded font-bold">Applications</a></li>
+                <li><a href="documents.html" class="block px-3 py-2 hover:bg-red-700 rounded">Documents</a></li>
+                <li><a href="payments.html" class="block px-3 py-2 hover:bg-red-700 rounded">Payments</a></li>
+                <li><a href="resources.html" class="block px-3 py-2 hover:bg-red-700 rounded">Resources</a></li>
+                <li class="border-t border-red-500 mt-2 pt-2">
+                    <div class="flex items-center px-3 py-2">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                            <p class="text-xs">Premium Account</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg shadow-md mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2">Start a New Loan Application</h1>
+                    <p class="mb-4">Provide the necessary information to begin your application process</p>
+                </div>
+                </div>
+        </section>
+
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+            <a href="dashboard.html" class="hover:text-red-600">Dashboard</a>
+            <span class="mx-2">/</span>
+            <a href="applications.html" class="hover:text-red-600">Applications</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-semibold">New Application</span>
+        </div>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Loan Application Details</h2>
+            <form id="loanApplicationForm" class="space-y-6">
+                <div>
+                    <label for="loanType" class="block text-gray-700 text-sm font-bold mb-2">Type of Loan</label>
+                    <select id="loanType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select Loan Type</option>
+                        <option value="smeGrowth">SME Growth Loan</option>
+                        <option value="equipmentFinance">Equipment Financing</option>
+                        <option value="workingCapital">Working Capital Loan</option>
+                        <option value="tradeFinance">Trade Finance</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="loanAmount" class="block text-gray-700 text-sm font-bold mb-2">Loan Amount (ZAR)</label>
+                    <input type="number" id="loanAmount" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter amount">
+                </div>
+                <div>
+                    <label for="businessName" class="block text-gray-700 text-sm font-bold mb-2">Business Name</label>
+                    <input type="text" id="businessName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter business name">
+                </div>
+                <div>
+                    <label for="registrationNumber" class="block text-gray-700 text-sm font-bold mb-2">Business Registration Number</label>
+                    <input type="text" id="registrationNumber" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter registration number">
+                </div>
+                <div>
+                    <label for="industry" class="block text-gray-700 text-sm font-bold mb-2">Industry</label>
+                    <input type="text" id="industry" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your industry">
+                </div>
+                <div>
+                    <label for="contactEmail" class="block text-gray-700 text-sm font-bold mb-2">Contact Email</label>
+                    <input type="email" id="contactEmail" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your email">
+                </div>
+                <div>
+                    <label for="contactPhone" class="block text-gray-700 text-sm font-bold mb-2">Contact Phone Number</label>
+                    <input type="tel" id="contactPhone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your phone number">
+                </div>
+                <div>
+                    <label for="applicationDetails" class="block text-gray-700 text-sm font-bold mb-2">Brief Description of Loan Purpose</label>
+                    <textarea id="applicationDetails" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Briefly describe how you intend to use the loan funds"></textarea>
+                </div>
+                <div id="applicationStatus" class="mt-4 p-4 border rounded-md shadow-sm" style="display: none;">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Application Status</h3>
+                    <p id="statusMessage" class="text-gray-600"></p>
+                </div>
+                <div>
+                    <button type="button" onclick="submitLoanApplication()" class="bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 transition-colors font-medium focus:outline-none focus:shadow-outline">
+                        Submit Application
+                    </button>
+                    <p class="mt-2 text-gray-500 text-sm">By submitting this application, you agree to our <a href="#" class="text-red-600 hover:underline">Terms and Conditions</a>.</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('applicationStatus').style.display = 'none';
+        });
+
+        function submitLoanApplication() {
+            // In a real application, you would collect the form data here
+            // and send it to a server using an AJAX request.
+
+            // For this example, we will just simulate a successful submission.
+            document.getElementById('statusMessage').textContent = 'Your loan application has been submitted successfully. You will receive an update within 3-5 business days.';
+            document.getElementById('applicationStatus').style.display = 'block';
+
+            // Optionally, you can disable the submit button to prevent multiple submissions
+            const submitButton = document.querySelector('button[onclick="submitLoanApplication()"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+
+            // Optionally, you can redirect the user after a few seconds
+            setTimeout(function() {
+                window.location.href = 'applications.html';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamlined SME Loan Application | ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-gray-200 transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gray-200 transition-colors">About</a></li>
+                    <li><a href="contact.html" class="hover:text-gray-200 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="index.html" class="block px-3 py-2 hover:bg-red-700 rounded">Home</a></li>
+                <li><a href="about.html" class="block px-3 py-2 hover:bg-red-700 rounded">About</a></li>
+                <li><a href="contact.html" class="block px-3 py-2 hover:bg-red-700 rounded">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="relative bg-gray-900 text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1590317297658-8731119c1940?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D" alt="Streamlined Application Process" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-70"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl font-bold mb-6">Apply for an SME Loan - The Streamlined Way</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Get the funding your business needs faster and easier with ABSA's streamlined online application process.</p>
+            <a href="login.html" class="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium inline-block">
+                Start Your Application Now
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Our Streamlined Application?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Simple and Intuitive</h3>
+                    <p class="text-gray-600">Our application is designed for ease of use, guiding you through each step without unnecessary complexity.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Faster Processing</h3>
+                    <p class="text-gray-600">Get a quicker decision on your loan application thanks to our efficient digital process.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7 1.274 4.057-1.176 8-5.042 8-3.868 0-6.285-3.943-5.042-8z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Transparent Process</h3>
+                    <p class="text-gray-600">Track your application status and understand the requirements at every stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How to Apply in 3 Easy Steps</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-2xl">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Fill Out the Online Form</h3>
+                    <p class="text-gray-600">Provide your business details, financial information, and the loan amount you need through our secure online form.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-2xl">2</div>
+                    <h3 class="text-xl font-semibold mb-2">Submit Required Documents</h3>
+                    <p class="text-gray-600">Upload necessary documents such as business registration, financial statements, and bank statements securely through our platform.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-2xl">3</div>
+                    <h3 class="text-xl font-semibold mb-2">Get a Decision</h3>
+                    <p class="text-gray-600">Our team will review your application, and you'll receive a decision in a timely manner. Track your application status online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Is Your Business Eligible?</h2>
+            <p class="text-lg text-gray-700 text-center mb-8">See if your SME meets our basic criteria for a streamlined loan application:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Registered Business</h3>
+                    <p class="text-gray-600">Your business must be officially registered and operating within South Africa.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Minimum Operating Period</h3>
+                    <p class="text-gray-600">Your business should have been operational for at least 6 months (adjust as needed).</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-9.753 0-9.753 14 0 14 9.753 0 9.753-14 0-14z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Minimum Annual Revenue</h3>
+                    <p class="text-gray-600">Your business should have a minimum annual revenue of R100,000 (adjust as needed).</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Good Business Standing</h3>
+                    <p class="text-gray-600">Your business should have a good financial standing without major defaults.</p>
+                </div>
+            </div>
+            <p class="text-center mt-8">Ready to take the next step? <a href="login.html" class="text-red-600 hover:underline font-medium">Log in to start your application</a>.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-red-600 text-white" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413dae4ddff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-blend-mode: overlay;">
+        <div class="container mx-auto px-4 text-center py-8 rounded-lg bg-red-600 bg-opacity-90">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Take the first step towards securing funding for your business growth.</p>
+            <div class="space-x-4">
+                <a href="login.html" class="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium">Start Application</a>
+                <a href="contact.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium">Speak to an Advisor</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

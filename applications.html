@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            <nav class="hidden md:flex items-center">
+                <ul class="flex space-x-6 mr-6">
+                    <li><a href="dashboard.html" class="hover:text-gray-200 transition-colors">Dashboard</a></li>
+                    <li><a href="applications.html" class="hover:text-gray-200 transition-colors font-bold">Applications</a></li>
+                    <li><a href="documents.html" class="hover:text-gray-200 transition-colors">Documents</a></li>
+                    <li><a href="payments.html" class="hover:text-gray-200 transition-colors">Payments</a></li>
+                    <li><a href="resources.html" class="hover:text-gray-200 transition-colors">Resources</a></li>
+                </ul>
+                <div class="flex items-center">
+                    <div class="mr-4 relative">
+                        <button class="focus:outline-none">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-yellow-400 text-xs text-gray-900 rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="dashboard.html" class="block px-3 py-2 hover:bg-red-700 rounded">Dashboard</a></li>
+                <li><a href="applications.html" class="block px-3 py-2 bg-red-700 rounded font-bold">Applications</a></li>
+                <li><a href="documents.html" class="block px-3 py-2 hover:bg-red-700 rounded">Documents</a></li>
+                <li><a href="payments.html" class="block px-3 py-2 hover:bg-red-700 rounded">Payments</a></li>
+                <li><a href="resources.html" class="block px-3 py-2 hover:bg-red-700 rounded">Resources</a></li>
+                <li class="border-t border-red-500 mt-2 pt-2">
+                    <div class="flex items-center px-3 py-2">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                            <p class="text-xs">Premium Account</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Loan Applications</h1>
+                <p class="text-gray-600">Manage and track all your SME loan applications</p>
+            </div>
+            <a href="new-application.html" class="mt-4 md:mt-0 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-bold">
+                <i class="fas fa-plus mr-2"></i> New Application
+            </a>
+        </div>
+
+        <!-- Filter and Search -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-4 md:mb-0">Filter Applications</h2>
+                <div class="relative w-full md:w-64">
+                    <input type="text" placeholder="Search applications..." class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                    <button class="absolute right-3 top-2.5 text-gray-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        <option value="">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="active">Active</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        <option value="">All Time</option>
+                        <option value="last_30">Last 30 Days</option>
+                        <option value="last_90">Last 90 Days</option>
+                        <option value="last_180">Last 180 Days</option>
+                        <option value="last_year">Last Year</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Amount Range</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        <option value="">All Amounts</option>
+                        <option value="0-100000">R0 - R100,000</option>
+                        <option value="100001-500000">R100,001 - R500,000</option>
+                        <option value="500001-1000000">R500,001 - R1,000,000</option>
+                        <option value="1000001+">R1,000,001+</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Purpose</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        <option value="">All Purposes</option>
+                        <option value="expansion">Business Expansion</option>
+                        <option value="equipment">Equipment Purchase</option>
+                        <option value="working_capital">Working Capital</option>
+                        <option value="inventory">Inventory</option>
+                        <option value="refinancing">Refinancing</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="flex justify-end mt-6">
+                <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors mr-3">
+                    Reset Filters
+                </button>
+                <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Applications List -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6 border-b">
+                <h2 class="text-xl font-bold text-gray-900">All Applications</h2>
+                <p class="text-gray-600">Showing 5 of 5 applications</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="py-3 px-4 text-left">Application ID</th>
+                            <th class="py-3 px-4 text-left">Date</th>
+                            <th class="py-3 px-4 text-left">Purpose</th>
+                            <th class="py-3 px-4 text-left">Amount</th>
+                            <th class="py-3 px-4 text-left">Term</th>
+                            <th class="py-3 px-4 text-left">Status</th>
+                            <th class="py-3 px-4 text-left">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20250310-089</td>
+                            <td class="py-3 px-4">Mar 10, 2025</td>
+                            <td class="py-3 px-4">Working Capital</td>
+                            <td class="py-3 px-4">R250,000</td>
+                            <td class="py-3 px-4">36 months</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Pending</span></td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <a href="#" class="text-blue-600 hover:text-blue-800" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="text-red-600 hover:text-red-800" title="Cancel"><i class="fas fa-times"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20250214-001</td>
+                            <td class="py-3 px-4">Feb 14, 2025</td>
+                            <td class="py-3 px-4">Business Expansion</td>
+                            <td class="py-3 px-4">R500,000</td>
+                            <td class="py-3 px-4">48 months</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Approved</span></td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <a href="#" class="text-blue-600 hover:text-blue-800" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="text-green-600 hover:text-green-800" title="Documents"><i class="fas fa-file-alt"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20240807-042</td>
+                            <td class="py-3 px-4">Aug 07, 2024</td>
+                            <td class="py-3 px-4">Equipment Purchase</td>
+                            <td class="py-3 px-4">R250,000</td>
+                            <td class="py-3 px-4">36 months</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Active</span></td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <a href="#" class="text-blue-600 hover:text-blue-800" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="text-green-600 hover:text-green-800" title="Documents"><i class="fas fa-file-alt"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20240425-033</td>
+                            <td class="py-3 px-4">Apr 25, 2024</td>
+                            <td class="py-3 px-4">Inventory Finance</td>
+                            <td class="py-3 px-4">R150,000</td>
+                            <td class="py-3 px-4">24 months</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-100 text-gray-800 rounded">Completed</span></td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <a href="#" class="text-blue-600 hover:text-blue-800" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="text-green-600 hover:text-green-800" title="Documents"><i class="fas fa-file-alt"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20240318-022</td>
+                            <td class="py-3 px-4">Mar 18, 2024</td>
+                            <td class="py-3 px-4">Working Capital</td>
+                            <td class="py-3 px-4">R300,000</td>
+                            <td class="py-3 px-4">36 months</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-100 text-red-800 rounded">Rejected</span></td>
+                            <td class="py-3 px-4">
+                                <div class="flex space-x-2">
+                                    <a href="#" class="text-blue-600 hover:text-blue-800" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="text-green-600 hover:text-green-800" title="New Application"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="p-6 border-t">
+                <div class="flex justify-between items-center">
+                    <p class="text-gray-600">Showing 1 to 5 of 5 entries</p>
+                    <div class="flex space-x-1">
+                        <button class="px-3 py-1 border rounded bg-gray-100 text-gray-700" disabled>Previous</button>
+                        <button class="px-3 py-1 border rounded bg-red-600 text-white">1</button>
+                        <button class="px-3 py-1 border rounded bg-gray-100 text-gray-700" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

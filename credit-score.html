@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Score - ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles for the credit score animation */
+        #creditScoreContainer {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #f3f3f3;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        #creditScoreCircle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 8px solid #ddd;
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        #creditScoreProgress {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 8px solid transparent;
+            border-top-color: #red-600; /* Default color */
+            position: absolute;
+            box-sizing: border-box;
+            transform: rotate(-90deg);
+            transition: transform 0.5s ease-in-out, border-top-color 0.5s ease-in-out;
+        }
+
+        #scoreDisplay {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            <nav class="hidden md:flex items-center">
+                <ul class="flex space-x-6 mr-6">
+                    <li><a href="dashboard.html" class="hover:text-gray-200 transition-colors">Dashboard</a></li>
+                    <li><a href="applications.html" class="hover:text-gray-200 transition-colors">Applications</a></li>
+                    <li><a href="documents.html" class="hover:text-gray-200 transition-colors font-bold">Documents</a></li>
+                    <li><a href="payments.html" class="hover:text-gray-200 transition-colors">Payments</a></li>
+                    <li><a href="resources.html" class="hover:text-gray-200 transition-colors">Resources</a></li>
+                </ul>
+                <div class="flex items-center">
+                    <div class="mr-4 relative">
+                        <button class="focus:outline-none">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-yellow-400 text-xs text-gray-900 rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="dashboard.html" class="block px-3 py-2 hover:bg-red-700 rounded">Dashboard</a></li>
+                <li><a href="applications.html" class="block px-3 py-2 hover:bg-red-700 rounded">Applications</a></li>
+                <li><a href="documents.html" class="block px-3 py-2 bg-red-700 rounded font-bold">Documents</a></li>
+                <li><a href="payments.html" class="block px-3 py-2 hover:bg-red-700 rounded">Payments</a></li>
+                <li><a href="resources.html" class="block px-3 py-2 hover:bg-red-700 rounded">Resources</a></li>
+                <li class="border-t border-red-500 mt-2 pt-2">
+                    <div class="flex items-center px-3 py-2">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                            <p class="text-xs">Premium Account</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+            <a href="dashboard.html" class="hover:text-red-600">Dashboard</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-semibold">Credit Score</span>
+        </div>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">AI-Powered Credit Score Assessment</h2>
+            <p class="text-gray-700 mb-4">Get an instant estimate of your business credit score based on the information you provide.</p>
+
+            <form id="creditScoreForm" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label for="annualRevenue" class="block text-gray-700 text-sm font-bold mb-2">Annual Business Revenue (ZAR)</label>
+                    <input type="number" id="annualRevenue" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., 500000" required>
+                </div>
+                <div>
+                    <label for="timeInBusiness" class="block text-gray-700 text-sm font-bold mb-2">Time in Business (Years)</label>
+                    <input type="number" id="timeInBusiness" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., 3" required>
+                </div>
+                <div>
+                    <label for="loanHistory" class="block text-gray-700 text-sm font-bold mb-2">Previous Loan Repayment History</label>
+                    <select id="loanHistory" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="excellent">Excellent</option>
+                        <option value="good">Good</option>
+                        <option value="average">Average</option>
+                        <option value="poor">Poor</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="industry" class="block text-gray-700 text-sm font-bold mb-2">Industry</label>
+                    <input type="text" id="industry" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., Retail" required>
+                </div>
+                <div>
+                    <label for="existingDebt" class="block text-gray-700 text-sm font-bold mb-2">Total Existing Business Debt (ZAR)</label>
+                    <input type="number" id="existingDebt" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., 100000">
+                </div>
+                <div>
+                    <label for="creditUtilization" class="block text-gray-700 text-sm font-bold mb-2">Credit Utilization Ratio (%)</label>
+                    <input type="number" id="creditUtilization" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., 25" min="0" max="100">
+                </div>
+            </form>
+
+            <button type="button" onclick="calculateCreditScore()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-bold focus:outline-none focus:shadow-outline">
+                Calculate Credit Score
+            </button>
+
+            <div id="creditScoreResult" class="mt-8 p-4 border rounded-md shadow-sm" style="display: none; text-align: center;">
+                <h3 class="text-lg font-semibold text-gray-700 mb-4">Your Estimated Credit Score</h3>
+                <div id="creditScoreContainer">
+                    <div id="creditScoreCircle"></div>
+                    <div id="creditScoreProgress"></div>
+                    <div id="scoreDisplay">---</div>
+                </div>
+                <p id="scoreFeedback" class="text-gray-600 mt-2"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        function calculateCreditScore() {
+            const annualRevenue = parseFloat(document.getElementById('annualRevenue').value);
+            const timeInBusiness = parseInt(document.getElementById('timeInBusiness').value);
+            const loanHistory = document.getElementById('loanHistory').value;
+            const industry = document.getElementById('industry').value;
+            const existingDebt = parseFloat(document.getElementById('existingDebt').value) || 0;
+            const creditUtilization = parseInt(document.getElementById('creditUtilization').value) || 0;
+
+            let creditScore = 600; // Base score
+            const maxScore = 850;
+
+            // Apply some simple logic (this is a very basic simulation)
+            if (annualRevenue > 1000000) {
+                creditScore += 50;
+            } else if (annualRevenue > 500000) {
+                creditScore += 30;
+            }
+
+            if (timeInBusiness > 5) {
+                creditScore += 40;
+            } else if (timeInBusiness > 2) {
+                creditScore += 20;
+            }
+
+            if (loanHistory === 'excellent') {
+                creditScore += 60;
+            } else if (loanHistory === 'good') {
+                creditScore += 30;
+            } else if (loanHistory === 'poor') {
+                creditScore -= 40;
+            }
+
+            if (existingDebt < annualRevenue / 2) {
+                creditScore += 20;
+            } else if (existingDebt > annualRevenue) {
+                creditScore -= 30;
+            }
+
+            if (creditUtilization < 30) {
+                creditScore += 30;
+            } else if (creditUtilization > 70) {
+                creditScore -= 20;
+            }
+
+            // Ensure score stays within a reasonable range
+            creditScore = Math.max(300, Math.min(maxScore, creditScore));
+
+            // Display the score and feedback with animation
+            const scoreDisplayElement = document.getElementById('scoreDisplay');
+            const scoreFeedbackElement = document.getElementById('scoreFeedback');
+            const progressElement = document.getElementById('creditScoreProgress');
+            const scoreContainerElement = document.getElementById('creditScoreContainer');
+
+            const percentage = (creditScore / maxScore) * 360;
+            progressElement.style.transform = `rotate(${percentage - 90}deg)`;
+
+            if (creditScore >= 750) {
+                progressElement.style.borderTopColor = '#4CAF50'; // Green
+                scoreFeedbackElement.textContent = 'Excellent credit score. You are likely to be approved for loans with favorable terms.';
+            } else if (creditScore >= 650) {
+                progressElement.style.borderTopColor = '#FFC107'; // Yellow
+                scoreFeedbackElement.textContent = 'Good credit score. You have a good chance of loan approval.';
+            } else if (creditScore >= 550) {
+                progressElement.style.borderTopColor = '#FF9800'; // Orange
+                scoreFeedbackElement.textContent = 'Average credit score. Loan approval might be possible but with potentially less favorable terms.';
+            } else {
+                progressElement.style.borderTopColor = '#F44336'; // Red
+                scoreFeedbackElement.textContent = 'Below average credit score. Loan approval might be challenging. Consider improving your financial health.';
+            }
+
+            // Simple count-up animation for the score
+            let count = 0;
+            const animationDuration = 1000; // 1 second
+            const steps = Math.ceil(animationDuration / 16); // Roughly 60 frames per second
+            const increment = Math.ceil(creditScore / steps);
+
+            const interval = setInterval(() => {
+                count += increment;
+                if (count >= creditScore) {
+                    clearInterval(interval);
+                    scoreDisplayElement.textContent = creditScore;
+                } else {
+                    scoreDisplayElement.textContent = count;
+                }
+            }, animationDuration / steps);
+
+            document.getElementById('creditScoreResult').style.display = 'block';
+        }
+
+        // Initialize the result section to be hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('creditScoreResult').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Applications - ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            <nav class="hidden md:flex items-center">
+                <ul class="flex space-x-6 mr-6">
+                    <li><a href="dashboard.html" class="hover:text-gray-200 transition-colors">Dashboard</a></li>
+                    <li><a href="applications.html" class="hover:text-gray-200 transition-colors font-bold">Applications</a></li>
+                    <li><a href="documents.html" class="hover:text-gray-200 transition-colors">Documents</a></li>
+                    <li><a href="payments.html" class="hover:text-gray-200 transition-colors">Payments</a></li>
+                    <li><a href="resources.html" class="hover:text-gray-200 transition-colors">Resources</a></li>
+                </ul>
+                <div class="flex items-center">
+                    <div class="mr-4 relative">
+                        <button class="focus:outline-none">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-yellow-400 text-xs text-gray-900 rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="dashboard.html" class="block px-3 py-2 hover:bg-red-700 rounded">Dashboard</a></li>
+                <li><a href="applications.html" class="block px-3 py-2 bg-red-700 rounded font-bold">Applications</a></li>
+                <li><a href="documents.html" class="block px-3 py-2 hover:bg-red-700 rounded">Documents</a></li>
+                <li><a href="payments.html" class="block px-3 py-2 hover:bg-red-700 rounded">Payments</a></li>
+                <li><a href="resources.html" class="block px-3 py-2 hover:bg-red-700 rounded">Resources</a></li>
+                <li class="border-t border-red-500 mt-2 pt-2">
+                    <div class="flex items-center px-3 py-2">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                            <p class="text-xs">Premium Account</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg shadow-md mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2">Pending Loan Applications</h1>
+                    <p class="mb-4">Track the status of your submitted loan applications</p>
+                </div>
+                <a href="new-application.html" class="bg-white text-red-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-bold">
+                    <i class="fas fa-plus mr-2"></i> New Application
+                </a>
+            </div>
+        </section>
+
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+            <a href="dashboard.html" class="hover:text-red-600">Dashboard</a>
+            <span class="mx-2">/</span>
+            <a href="applications.html" class="hover:text-red-600">Applications</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-semibold">Pending Applications</span>
+        </div>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Applications Under Review</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="py-3 px-4 text-left">Application ID</th>
+                            <th class="py-3 px-4 text-left">Loan Type</th>
+                            <th class="py-3 px-4 text-left">Applied Amount</th>
+                            <th class="py-3 px-4 text-left">Submission Date</th>
+                            <th class="py-3 px-4 text-left">Status</th>
+                            <th class="py-3 px-4 text-left">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20250320-001</td>
+                            <td class="py-3 px-4">SME Growth Loan</td>
+                            <td class="py-3 px-4">R 750,000</td>
+                            <td class="py-3 px-4">2025-03-20</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Pending</span></td>
+                            <td class="py-3 px-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-700 mr-2"><i class="fas fa-info-circle"></i> Details</a>
+                                <button class="text-gray-500 hover:text-gray-700 cursor-not-allowed" title="Cannot Cancel">
+                                    <i class="fas fa-times-circle"></i> Cancel
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4">APP-20250315-002</td>
+                            <td class="py-3 px-4">Equipment Financing</td>
+                            <td class="py-3 px-4">R 300,000</td>
+                            <td class="py-3 px-4">2025-03-15</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Pending</span></td>
+                            <td class="py-3 px-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-700 mr-2"><i class="fas fa-info-circle"></i> Details</a>
+                                <button class="text-red-600 hover:text-red-700" onclick="cancelApplication('APP-20250315-002')"><i class="fas fa-times-circle"></i> Cancel</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-gray-500 text-sm">Check back for updates on your application status. For any urgent queries, please contact our support team.</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        function cancelApplication(applicationId) {
+            // In a real application, this would trigger an API call to cancel the application.
+            // For this example, we'll just show an alert.
+            alert(`Cancellation initiated for application ID: ${applicationId}. This is a simulation.`);
+            // You might want to update the UI to reflect the cancellation (e.g., change status).
+        }
+    </script>
+</body>
+</html>

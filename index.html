@@ -1,0 +1,327 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Add ABSA favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Header with ABSA Logo -->
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- ABSA Logo SVG -->
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-gray-200 transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gray-200 transition-colors">About</a></li>
+                    <li><a href="features.html" class="hover:text-gray-200 transition-colors">Features</a></li>
+                    <li><a href="how-it-works.html" class="hover:text-gray-200 transition-colors">How It Works</a></li>
+                    <li><a href="education.html" class="hover:text-gray-200 transition-colors">Education Hub</a></li>
+                    <li><a href="contact.html" class="hover:text-gray-200 transition-colors">Contact</a></li>
+                    <li><a href="login.html" class="bg-white text-red-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">Login</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="index.html" class="block px-3 py-2 hover:bg-red-700 rounded">Home</a></li>
+                <li><a href="about.html" class="block px-3 py-2 hover:bg-red-700 rounded">About</a></li>
+                <li><a href="features.html" class="block px-3 py-2 hover:bg-red-700 rounded">Features</a></li>
+                <li><a href="how-it-works.html" class="block px-3 py-2 hover:bg-red-700 rounded">How It Works</a></li>
+                <li><a href="education.html" class="block px-3 py-2 hover:bg-red-700 rounded">Education Hub</a></li>
+                <li><a href="contact.html" class="block px-3 py-2 hover:bg-red-700 rounded">Contact</a></li>
+                <li><a href="login.html" class="block px-3 py-2 bg-white text-red-600 rounded mt-2">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section with Animation -->
+    <section class="relative bg-gray-900 text-white py-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grad1)"/>
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E20025;stop-opacity:0.8"/>
+                        <stop offset="100%" style="stop-color:#2D3748;stop-opacity:0.9"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto text-center px-4 relative z-10">
+            <h1 class="text-5xl font-bold mb-6">Empowering SMEs with Fast, Accessible Loans</h1>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">ABSA's Digital SME Loan Platform: Simplifying Financing for South Africa's Entrepreneurs</p>
+            <div class="space-x-6">
+                <a href="login.html" class="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors inline-flex items-center">
+                    Apply Now
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="about.html" class="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section with Icons -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Streamlined Application -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-red-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Streamlined Application</h3>
+                    <p class="text-gray-600 mb-4">Quick and easy digital loan application process with minimal paperwork.</p>
+                    <a href="streamlined-application.html" class="text-red-600 hover:text-red-700 inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- AI Credit Scoring -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-red-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">AI-Powered Credit Scoring</h3>
+                    <p class="text-gray-600 mb-4">Advanced algorithms for fair and comprehensive credit assessment.</p>
+                    <a href="ai-credit-scoring.html" class="text-red-600 hover:text-red-700 inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Real-time Chatbot -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-red-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">24/7 Digital Assistant</h3>
+                    <p class="text-gray-600 mb-4">Get instant answers to your questions anytime with our AI chatbot.</p>
+                    <a href="24-7-assistance.html" class="text-red-600 hover:text-red-700 inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Financial Education -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-red-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Financial Education</h3>
+                    <p class="text-gray-600 mb-4">Access educational resources to improve your business finance knowledge.</p>
+                    <a href="financial-education.html" class="text-red-600 hover:text-red-700 inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="fixed bottom-4 right-4 z-50">
+        <button id="chatbot-toggle" class="bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            </svg>
+        </button>
+        
+        <div id="chatbot-window" class="hidden fixed bottom-20 right-4 w-96 bg-white rounded-lg shadow-xl">
+            <div class="p-4 bg-red-600 text-white rounded-t-lg flex justify-between items-center">
+                <h3 class="font-semibold">ABSA Digital Assistant</h3>
+                <button id="chatbot-close" class="text-white hover:text-gray-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="chat-messages" class="h-96 overflow-y-auto p-4"></div>
+            <div class="p-4 border-t">
+                <form id="chat-form" class="flex">
+                    <input type="text<input type="text" id="chat-input" class="flex-1 p-2 border rounded-l-lg focus:outline-none focus:border-red-600" placeholder="Type your message...">
+                    <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-r-lg hover:bg-red-700 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Chatbot -->
+    <script>
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            const chatbotClose = document.getElementById('chatbot-close');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            // Toggle chatbot window
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.classList.toggle('hidden');
+                if (!chatbotWindow.classList.contains('hidden')) {
+                    chatInput.focus();
+                }
+            });
+
+            // Close chatbot window
+            chatbotClose.addEventListener('click', () => {
+                chatbotWindow.classList.add('hidden');
+            });
+
+            // Handle chat form submission
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage('user', message);
+                    chatInput.value = '';
+
+                    // Simulate bot response
+                    setTimeout(() => {
+                        const botResponse = getBotResponse(message);
+                        addMessage('bot', botResponse);
+                    }, 500);
+                }
+            });
+
+            // Add message to chat window
+            function addMessage(type, message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `mb-4 ${type === 'user' ? 'text-right' : ''}`;
+                
+                const messageBubble = document.createElement('div');
+                messageBubble.className = `inline-block p-3 rounded-lg ${
+                    type === 'user' 
+                        ? 'bg-red-600 text-white' 
+                        : 'bg-gray-200 text-gray-800'
+                }`;
+                messageBubble.textContent = message;
+                
+                messageDiv.appendChild(messageBubble);
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Simple bot responses based on keywords
+            function getBotResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                if (lowerMessage.includes('loan')) {
+                    return "To apply for a loan, you'll need to provide your business registration documents, financial statements, and bank statements. Would you like to start an application?";
+                } else if (lowerMessage.includes('document')) {
+                    return "Required documents include: Business registration, 6 months of bank statements, financial statements, and tax clearance certificate. Need help with a specific document?";
+                } else if (lowerMessage.includes('qualify')) {
+                    return "Loan qualification depends on factors like business age (min. 2 years), annual revenue, and credit score. Would you like to check your eligibility?";
+                } else if (lowerMessage.includes('time') || lowerMessage.includes('long')) {
+                    return "The loan application process typically takes 2-3 business days. Once approved, funds are disbursed within 24 hours.";
+                } else {
+                    return "I'm here to help with your SME loan queries. You can ask about application requirements, qualification criteria, or documentation needed.";
+                }
+            }
+        });
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body> 
+</html>

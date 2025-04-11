@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Credit Scoring | ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Add ABSA favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Header with ABSA Logo -->
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- ABSA Logo SVG -->
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-gray-200 transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gray-200 transition-colors">About</a></li>
+                    <li><a href="features.html" class="hover:text-gray-200 transition-colors">Features</a></li>
+                    <li><a href="how-it-works.html" class="hover:text-gray-200 transition-colors">How It Works</a></li>
+                    <li><a href="education.html" class="hover:text-gray-200 transition-colors">Education Hub</a></li>
+                    <li><a href="contact.html" class="hover:text-gray-200 transition-colors">Contact</a></li>
+                    <li><a href="login.html" class="bg-white text-red-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">Login</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="index.html" class="block px-3 py-2 hover:bg-red-700 rounded">Home</a></li>
+                <li><a href="about.html" class="block px-3 py-2 hover:bg-red-700 rounded">About</a></li>
+                <li><a href="features.html" class="block px-3 py-2 hover:bg-red-700 rounded">Features</a></li>
+                <li><a href="how-it-works.html" class="block px-3 py-2 hover:bg-red-700 rounded">How It Works</a></li>
+                <li><a href="education.html" class="block px-3 py-2 hover:bg-red-700 rounded">Education Hub</a></li>
+                <li><a href="contact.html" class="block px-3 py-2 hover:bg-red-700 rounded">Contact</a></li>
+                <li><a href="login.html" class="block px-3 py-2 bg-white text-red-600 rounded mt-2">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gray-900 text-white py-16 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grad1)"/>
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E20025;stop-opacity:0.8"/>
+                        <stop offset="100%" style="stop-color:#2D3748;stop-opacity:0.9"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-4xl font-bold mb-6">AI-Powered Credit Scoring</h1>
+            <p class="text-xl mb-6 max-w-3xl">Our advanced algorithm provides fair, comprehensive, and efficient credit assessment for your SME loan application.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Column -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">How Our AI Credit Scoring Works</h2>
+                    <p class="text-gray-700 mb-6">Traditional credit scoring often overlooks the unique needs and circumstances of small and medium enterprises. ABSA's AI-powered credit scoring system takes a more holistic approach, analyzing multiple data points to give your business a fair assessment.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Key Benefits:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-red-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Comprehensive business assessment beyond traditional credit scores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-red-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Faster approval process with real-time data analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-red-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Reduced bias through algorithm-based decisions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-red-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Personalized loan offers based on your business profile</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-red-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Transparent scoring process with detailed feedback</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#eligibility-checker" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors inline-flex items-center">
+                        Check Your Eligibility
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Illustration Column -->
+                <div class="bg-gray-100 p-8 rounded-xl">
+                    <div class="relative h-96">
+                        <!-- AI Scoring Process Visualization -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-full max-w-md">
+                                <div class="relative mb-12">
+                                    <div class="absolute w-full h-1 bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
+                                    <div class="relative flex justify-between">
+                                        <div class="text-center">
+                                            <div class="w-12 h-12 mx-auto bg-red-600 rounded-full flex items-center justify-center border-4 border-white text-white font-bold">1</div>
+                                            <div class="mt-2 text-sm font-medium">Data Collection</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-12 h-12 mx-auto bg-red-600 rounded-full flex items-center justify-center border-4 border-white text-white font-bold">2</div>
+                                            <div class="mt-2 text-sm font-medium">AI Analysis</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-12 h-12 mx-auto bg-red-600 rounded-full flex items-center justify-center border-4 border-white text-white font-bold">3</div>
+                                            <div class="mt-2 text-sm font-medium">Score Generation</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-12 h-12 mx-auto bg-red-600 rounded-full flex items-center justify-center border-4 border-white text-white font-bold">4</div>
+                                            <div class="mt-2 text-sm font-medium">Offer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Factors in AI Scoring -->
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-semibold mb-4 text-center">Factors Considered in Scoring</h4>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-red-600 rounded-full mr-2"></div>
+                                            <span class="text-sm">Business Cash Flow</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-blue-600 rounded-full mr-2"></div>
+                                            <span class="text-sm">Traditional Credit Score</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-green-600 rounded-full mr-2"></div>
+                                            <span class="text-sm">Transaction History</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-yellow-600 rounded-full mr-2"></div>
+                                            <span class="text-sm">Industry Performance</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-purple-600 rounded-full mr-2"></div>
+                                            <span class="text-sm">Business Age</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-gray-600 rounded-full mr-2"></div>
+                                            <span class="text-sm">Payment History</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our AI Credit Scoring Process</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">1</div>
+                    <h3 class="text-xl font-semibold mb-4">Data Collection</h3>
+                    <p class="text-gray-600 mb-4">We securely collect relevant financial data from your business through our digital platform. This includes bank statements, financial records, and business performance metrics.</p>
+                    <p class="text-gray-600">The process is automated and secure, requiring minimal manual input from you.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">2</div>
+                    <h3 class="text-xl font-semibold mb-4">AI Analysis</h3>
+                    <p class="text-gray-600 mb-4">Our sophisticated AI algorithm analyzes multiple data points, looking beyond traditional credit scores to understand your business's true financial health.</p>
+                    <p class="text-gray-600">The system identifies patterns, trends, and potential in ways that conventional methods cannot.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl">3</div>
+                    <h3 class="text-xl font-semibold mb-4">Score Generation & Offer</h3>
+                    <p class="text-gray-600 mb-4">Based on the comprehensive analysis, we generate a proprietary ABSA SME Score that reflects your business's creditworthiness more accurately.</p>
+                    <p class="text-gray-600">This score helps determine suitable loan products, amounts, and terms tailored specifically to your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Checker Section -->
+    <section id="eligibility-checker" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Check Your Eligibility</h2>
+                <p class="text-center text-gray-600 mb-8">Answer a few questions to get an instant preliminary assessment of your business's loan eligibility.</p>
+                
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+                    <form id="eligibility-form" class="space-y-6">
+                        <div>
+                            <label for="business-age" class="block text-sm font-medium text-gray-700 mb-1">How long has your business been operating?</label>
+                            <select id="business-age" name="business-age" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="less-than-1">Less than 1 year</option>
+                                <option value="1-2">1-2 years</option>
+                                <option value="2-5">2-5 years</option>
+                                <option value="more-than-5">More than 5 years</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="annual-revenue" class="block text-sm font-medium text-gray-700 mb-1">What is your approximate annual revenue?</label>
+                            <select id="annual-revenue" name="annual-revenue" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="less-than-100k">Less than R100,000</option>
+                                <option value="100k-500k">R100,000 - R500,000</option>
+                                <option value="500k-1m">R500,000 - R1 million</option>
+                                <option value="1m-5m">R1 million - R5 million</option>
+                                <option value="more-than-5m">More than R5 million</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="industry" class="block text-sm font-medium text-gray-700 mb-1">What industry is your business in?</label>
+                            <select id="industry" name="industry" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="retail">Retail</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="services">Professional Services</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="construction">Construction</option>
+                                <option value="technology">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="credit-history" class="block text-sm font-medium text-gray-700 mb-1">How would you rate your personal credit history?</label>
+                            <select id="credit-history" name="credit-history" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="good">Good</option>
+                                <option value="fair">Fair</option>
+                                <option value="poor">Poor</option>
+                                <option value="no-history">No credit history</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="loan-amount" class="block text-sm font-medium text-gray-700 mb-1">What loan amount are you seeking?</label>
+                            <select id="loan-amount" name="loan-amount" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="less-than-50k">Less than R50,000</option>
+                                <option value="50k-100k">R50,000 - R100,000</option>
+                                <option value="100k-500k">R100,000 - R500,000</option>
+                                <option value="500k-1m">R500,000 - R1 million</option>
+                                <option value="more-than-1m">More than R1 million</option>
+                            </select>
+                        </div>
+                        
+                        <div class="pt-3">
+                            <button type="submit" class="w-full bg-red-600 text-white py-3 px-4 rounded-lg hover:bg-red-700 transition-colors font-medium">
+                                Check Eligibility
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Results Section (Hidden by default) -->
+                    <div id="eligibility-results" class="hidden mt-8 p-6 border-2 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-center" id="result-heading"></h3>
+                        <div class="flex justify-center mb-6">
+                            <div class="w-full max-w-xs bg-gray-200 rounded-full h-2.5">
+                                <div id="eligibility-meter" class="bg-red-600 h-2.5 rounded-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <p id="result-message" class="text-center text-gray-700 mb-6"></p>
+                        <div class="text-center">
+                            <a href="login.html" class="inline-block bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700 transition-colors font-medium">
+                                Start Application
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left font-medium flex justify-between items-center">
+                            <span>What makes ABSA's AI credit scoring different from traditional scoring?</span>
+                            <svg class="w-5 h-5 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600">ABSA's AI credit scoring analyzes a broader range of financial data points beyond just traditional credit scores. We consider your business's cash flow patterns, industry performance benchmarks, transaction history, and growth potential. This allows us to provide a more accurate assessment of your business's true financial health and loan repayment capability.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left font-medium flex justify-between items-center">
+                            <span>Is my financial data secure during the AI scoring process?</span>
+                            <svg class="w-5 h-5 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600">Absolutely. ABSA employs bank-grade security measures to protect all your data. We use end-to-end encryption for data transmission, secure storage systems, and strict access controls. Your information is only used for the purpose of credit assessment and is handled in compliance with the POPI Act and other relevant data protection regulations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left font-medium flex justify-between items-center">
+                            <span>How long does the AI credit scoring process take?</span>
+                            <svg class="w-5 h-5 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600">Our AI credit scoring system works in real-time. Once you've submitted your application and connected your financial accounts, the initial assessment typically takes just minutes. For more complex business structures or larger loan amounts, a comprehensive analysis might take up to 24 hours, which is still significantly faster than traditional credit assessment methods.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left font-medium flex justify-between items-center">
+                            <span>What if my business has a limited credit history?</span>
+                            <svg class="w-5 h-5 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600">This is where our AI credit scoring system truly shines. For businesses with limited credit history, our algorithm evaluates alternative data sources such as cash flow consistency, business growth patterns, and industry benchmarks. This allows us to make informed lending decisions even for newer businesses or entrepreneurs who haven't established extensive credit profiles.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full px-6 py-4 text-left font-medium flex justify-between items-center">
+                            <span>Can I get feedback on my credit assessment results?</span>
+                            <svg class="w-5 h-5 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content px-6 pb-4 hidden">
+                            <p class="text-gray-600">Yes. Transparency is a key principle of our AI credit scoring system. After the assessment, you'll receive a detailed breakdown of your business's credit profile, highlighting strengths and areas for improvement. If your application isn't successful, we provide specific feedback and recommendations to help you improve your eligibility for future applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Experience the fairest, most comprehensive credit assessment for your business with ABSA's AI-powered system.</p>
+            <div class="space-x-4">
+                <a href="login.html" class="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium">Apply Now</a>
+                <a href="contact.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium">Speak to an Advisor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

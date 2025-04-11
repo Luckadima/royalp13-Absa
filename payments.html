@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - ABSA Digital SME Loan Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <svg class="h-10" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,10 L40,10 L30,30 Z" fill="white"/>
+                <text x="50" y="30" fill="white" font-size="24" font-weight="bold">ABSA</text>
+            </svg>
+            <nav class="hidden md:flex items-center">
+                <ul class="flex space-x-6 mr-6">
+                    <li><a href="dashboard.html" class="hover:text-gray-200 transition-colors">Dashboard</a></li>
+                    <li><a href="applications.html" class="hover:text-gray-200 transition-colors">Applications</a></li>
+                    <li><a href="documents.html" class="hover:text-gray-200 transition-colors">Documents</a></li>
+                    <li><a href="payments.html" class="hover:text-gray-200 transition-colors font-bold">Payments</a></li>
+                    <li><a href="resources.html" class="hover:text-gray-200 transition-colors">Resources</a></li>
+                </ul>
+                <div class="flex items-center">
+                    <div class="mr-4 relative">
+                        <button class="focus:outline-none">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-yellow-400 text-xs text-gray-900 rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-4 pt-2 pb-3 space-y-1">
+                <li><a href="dashboard.html" class="block px-3 py-2 hover:bg-red-700 rounded">Dashboard</a></li>
+                <li><a href="applications.html" class="block px-3 py-2 hover:bg-red-700 rounded">Applications</a></li>
+                <li><a href="documents.html" class="block px-3 py-2 hover:bg-red-700 rounded">Documents</a></li>
+                <li><a href="payments.html" class="block px-3 py-2 bg-red-700 rounded font-bold">Payments</a></li>
+                <li><a href="resources.html" class="block px-3 py-2 hover:bg-red-700 rounded">Resources</a></li>
+                <li class="border-t border-red-500 mt-2 pt-2">
+                    <div class="flex items-center px-3 py-2">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="h-8 w-8 rounded-full mr-2">
+                        <div class="text-sm">
+                            <p class="font-semibold">Network Navigators</p>
+                            <p class="text-xs">Premium Account</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Payments Header -->
+        <section class="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg shadow-md mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2">Payment Center</h1>
+                    <p class="mb-4">Manage all your loan repayments in one place</p>
+                </div>
+                <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-bold">
+                    <i class="fas fa-credit-card mr-2"></i> Make a Payment
+                </a>
+            </div>
+        </section>
+        
+        <!-- Payment Summary Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-gray-700 font-semibold">Next Payment Due</h3>
+                    <span class="text-white bg-blue-500 p-2 rounded-full">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900">Apr 01, 2025</p>
+                <p class="text-sm text-gray-500">Amount: R12,500</p>
+                <div class="mt-4 pt-4 border-t">
+                    <a href="#" class="text-red-600 hover:text-red-700 text-sm font-medium flex items-center">
+                        Pay now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-gray-700 font-semibold">Total Outstanding</h3>
+                    <span class="text-white bg-yellow-500 p-2 rounded-full">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900">R682,500</p>
+                <p class="text-sm text-gray-500">Across all active loans</p>
+                <div class="mt-4 pt-4 border-t">
+                    <a href="#" class="text-red-600 hover:text-red-700 text-sm font-medium flex items-center">
+                        View details <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-gray-700 font-semibold">Payment History</h3>
+                    <span class="text-white bg-green-500 p-2 rounded-full">
+                        <i class="fas fa-check-circle"></i>
+                    </span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900">6</p>
+                <p class="text-sm text-gray-500">Payments made this year</p>
+                <div class="mt-4 pt-4 border-t">
+                    <a href="#" class="text-red-600 hover:text-red-700 text-sm font-medium flex items-center">
+                        View history <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Upcoming Payments -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Upcoming Payments</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="py-3 px-4 text-left">Loan ID</th>
+                            <th class="py-3 px-4 text-left">Due Date</th>
+                            <th class="py-3 px-4 text-left">Amount</th>
+                            <th class="py-3 px-4 text-left">Principal</th>
+                            <th class="py-3 px-4 text-left">Interest</th>
+                            <th class="py-3 px-4 text-left">Status</th>
+                            <th class="py-3 px-4 text-left">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20250214-001</td>
+                            <td class="py-3 px-4">Apr 01, 2025</td>
+                            <td class="py-3 px-4">R12,500</td>
+                            <td class="py-3 px-4">R8,340</td>
+                            <td class="py-3 px-4">R4,160</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded">Upcoming</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-red-600 hover:text-red-700">Pay Now</a></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20240807-042</td>
+                            <td class="py-3 px-4">Apr 07, 2025</td>
+                            <td class="py-3 px-4">R6,250</td>
+                            <td class="py-3 px-4">R4,570</td>
+                            <td class="py-3 px-4">R1,680</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded">Upcoming</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-red-600 hover:text-red-700">Pay Now</a></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20250214-001</td>
+                            <td class="py-3 px-4">May 01, 2025</td>
+                            <td class="py-3 px-4">R12,500</td>
+                            <td class="py-3 px-4">R8,410</td>
+                            <td class="py-3 px-4">R4,090</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-100 text-gray-800 rounded">Scheduled</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-gray-500">Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Payment History -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Payment History</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="py-3 px-4 text-left">Loan ID</th>
+                            <th class="py-3 px-4 text-left">Payment Date</th>
+                            <th class="py-3 px-4 text-left">Amount</th>
+                            <th class="py-3 px-4 text-left">Payment Method</th>
+                            <th class="py-3 px-4 text-left">Reference</th>
+                            <th class="py-3 px-4 text-left">Status</th>
+                            <th class="py-3 px-4 text-left">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20250214-001</td>
+                            <td class="py-3 px-4">Mar 01, 2025</td>
+                            <td class="py-3 px-4">R12,500</td>
+                            <td class="py-3 px-4">EFT</td>
+                            <td class="py-3 px-4">PAY-7891254</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Completed</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-red-600 hover:text-red-700">Receipt</a></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20240807-042</td>
+                            <td class="py-3 px-4">Mar 07, 2025</td>
+                            <td class="py-3 px-4">R6,250</td>
+                            <td class="py-3 px-4">Debit Order</td>
+                            <td class="py-3 px-4">PAY-7892156</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Completed</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-red-600 hover:text-red-700">Receipt</a></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20250214-001</td>
+                            <td class="py-3 px-4">Feb 01, 2025</td>
+                            <td class="py-3 px-4">R12,500</td>
+                            <td class="py-3 px-4">EFT</td>
+                            <td class="py-3 px-4">PAY-7742315</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Completed</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-red-600 hover:text-red-700">Receipt</a></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">L-20240807-042</td>
+                            <td class="py-3 px-4">Feb 07, 2025</td>
+                            <td class="py-3 px-4">R6,250</td>
+                            <td class="py-3 px-4">Debit Order</td>
+                            <td class="py-3 px-4">PAY-7745697</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Completed</span></td>
+                            <td class="py-3 px-4"><a href="#" class="text-red-600 hover:text-red-700">Receipt</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 pt-4 border-t flex justify-between items-center">
+                <div class="text-sm text-gray-600">
+                    Showing 4 of 24 payments
+                </div>
+                <div class="flex space-x-2">
+                    <a href="#" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">1</a>
+                    <a href="#" class="px-3 py-1 bg-red-600 text-white rounded">2</a>
+                    <a href="#" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">3</a>
+                    <a href="#" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">...</a>
+                    <a href="#" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">6</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Methods and Settings -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <!-- Payment Methods -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-gray-900">Payment Methods</h2>
+                    <a href="#" class="text-red-600 hover:text-red-700 text-sm">+ Add new</a>
+                </div>
+                <div class="space-y-4">
+                    <div class="border p-4 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-university"></i>
+                            </span>
+                            <div>
+                                <p class="font-medium">ABSA Business Account</p>
+                                <p class="text-sm text-gray-500">**** **** **** 3542</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <span class="text-green-600 text-sm bg-green-100 px-2 py-1 rounded">Default</span>
+                            <a href="#" class="text-gray-500 hover:text-gray-700"><i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
+                    <div class="border p-4 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-credit-card"></i>
+                            </span>
+                            <div>
+                                <p class="font-medium">Business Credit Card</p>
+                                <p class="text-sm text-gray-500">**** **** **** 7891</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="text-gray-500 hover:text-gray-700"><i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Payment Settings -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold text-gray-900 mb-4">Payment Settings</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b">
+                        <div>
+                            <p class="font-medium">Automatic Payments</p>
+                            <p class="text-sm text-gray-500">Debit orders for all loans</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                        </label>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b">
+                        <div>
+                            <p class="font-medium">Payment Reminders</p>
+                            <p class="text-sm text-gray-500">Email and SMS notifications</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                        </label>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b">
+                        <div>
+                            <p class="font-medium">Early Payment Options</p>
+                            <p class="text-sm text-gray-500">Enable early repayment</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                        </label>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-medium">Payment Receipts</p>
+                            <p class="text-sm text-gray-500">Auto-generate PDF receipts</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About ABSA</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Media Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Business Loans</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Banking Solutions</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Investments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Help Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Security Centre</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">POPI Act</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition-colors">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 ABSA Bank. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
